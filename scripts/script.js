@@ -89,7 +89,7 @@ function isSolved() {
 }
 
 function quitGame() {
-    window.location.href = './index.html';
+    window.location.href = '../index.html';
 }
 
 document.getElementById('shuffle-button').addEventListener('click', shuffleTiles);
