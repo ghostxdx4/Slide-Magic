@@ -16,7 +16,7 @@ function createGrid() {
         if (tile === 0) {
             tileElement.classList.add('empty');
         } else {
-            tileElement.style.backgroundImage = `url(./images/${selectedImage})`;
+            tileElement.style.backgroundImage = `url(../images/${selectedImage})`;
 
             const row = Math.floor((tile - 1) / gridSize);
             let col = (tile - 1) % gridSize;
@@ -36,7 +36,7 @@ function createPreview() {
     for (let i = 0; i < gridSize * gridSize; i++) {
         const tileElement = document.createElement('div');
         tileElement.className = 'preview-tile';
-        tileElement.style.backgroundImage = `url(./images/${selectedImage})`;
+        tileElement.style.backgroundImage = `url(../images/${selectedImage})`;
         const row = Math.floor(i / gridSize);
         const col = i % gridSize;
         tileElement.style.backgroundPosition = `${-col * 20}px ${-row * 20}px`;
