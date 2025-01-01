@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Settings - Slide Magic</title>
+  <link rel="stylesheet" href="../css/styles_setting.css">
+</head>
+<body>
+
+  <header>
+    <h1>Settings</h1>
+  </header>
+
+  <div class="control-container">
+    <div class="control-item">
+      <label for="musicToggle">Music:</label>
+      <input type="checkbox" id="musicToggle">
+    </div>
+
+    <div class="control-item">
+      <label for="volumeSlider">Volume:</label>
+      <input type="range" id="volumeSlider" min="0" max="100" value="50">
+      <span id="volumeValue">50</span>%
+    </div>
+    
+    <div class="control-item">
+      <button onclick="openTerms()">Terms and Conditions</button>
+    </div>
+  </div>
+
+  <button onclick="goBack()">Go Back</button>
+
+  <div id="termsModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeTerms()">&times;</span>
+      <h2>Terms and Conditions</h2>
+      <p>By using this game, you agree to the following terms:</p>
+      <ul>
+        <li>1. This is a puzzle game designed for entertainment.</li>
+        <li>2. The game may include advertisements.</li>
+        <li>3. All images used are for non-commercial use only.</li>
+        <li>4. You are responsible for your own progress in the game.</li>
+        <li>5. We are not responsible for any technical issues or bugs.</li>
+      </ul>
+    </div>
+  </div>
+
+  <script>
+    function goBack() {
+      window.location.href = '../index.html';
+    }
+
+    function openTerms() {
+      document.getElementById('termsModal').style.display = 'block';
+    }
+
+    function closeTerms() {
+      document.getElementById('termsModal').style.display = 'none';
+    }
+
+    const volumeSlider = document.getElementById('volumeSlider');
+    const volumeValue = document.getElementById('volumeValue');
+    const backgroundMusic = document.getElementById('backgroundMusic');
+    const musicToggle = document.getElementById('musicToggle');
+    
+    backgroundMusic.volume = volumeSlider.value / 100;
+    volumeValue.textContent = volumeSlider.value;
+
+    volumeSlider.addEventListener('input', function() {
+      volumeValue.textContent = volumeSlider.value;
+      backgroundMusic.volume = volumeSlider.value / 100;
+    });
+
+    musicToggle.addEventListener('change', function() {
+      if (musicToggle.checked) {
+        backgroundMusic.play();
+        localStorage.setItem("musicState", "playing");
+      } else {
+        backgroundMusic.pause();
+        localStorage.setItem("musicState", "paused");
+      }
+    });
+
+    const musicState = localStorage.getItem("musicState");
+    if (musicState === "playing") {
+      musicToggle.checked = true;
+    } else {
+      musicToggle.checked = false;
+    }
+  </script>
+
+</body>
+</html>
