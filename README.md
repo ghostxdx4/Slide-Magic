@@ -1,6 +1,6 @@
-# **Magic Slider**  
+# **Slide Magic**  
 
-**Magic Slider** is a captivating sliding puzzle game that brings together logic, strategy, and creativity. With visually stunning graphics and intuitive gameplay, it’s designed to challenge your mind and provide hours of fun. Solve intricate puzzles, explore magical themes, and become the ultimate slider master!
+**Slide Magicr** is a captivating sliding puzzle game that brings together logic, strategy, and creativity. With visually stunning graphics and intuitive gameplay, it’s designed to challenge your mind and provide hours of fun. Solve intricate puzzles, explore magical themes, and become the ultimate slider master!
 
 ---
 
@@ -38,12 +38,12 @@ Follow these steps to get started:
 
 1. **Clone the Repository**  
    ```bash
-   git clone https://github.com/yourusername/magic-slider.git
+   git clone https://github.com/ghostxdx4/Slide-Magic.git
    ```
 
 2. **Navigate to the Directory**  
    ```bash
-   cd magic-slider
+   cd Slide-Magic
    ```
 
 3. **Run the Game**  
@@ -52,7 +52,7 @@ Follow these steps to get started:
 ---
 
 ## **Screenshots**  
-![Magic Slider Gameplay](https://via.placeholder.com/800x400?text=Add+Your+Screenshot+Here)
+![Slide Magic Gameplay](https://via.placeholder.com/800x400?text=Add+Your+Screenshot+Here)
 
 ---
 
@@ -71,7 +71,7 @@ This project is licensed under the [MIT License](LICENSE). Feel free to use, mod
 
 ## **Contact**  
 For questions, suggestions, or feedback, reach out via:
-- **Email**: [your-email@example.com](mailto:your-email@example.com)  
-- **GitHub Issues**: [Magic Slider Issues](https://github.com/yourusername/magic-slider/issues)
+- **Email**: [fernandesdylan104@gmail.com](mailto:fernandesdylan104@gmail.com)  
+- **GitHub Issues**: [Slide Magic Issues](https://github.com/ghostxdx4/Slide-Magic/issues)
 
-Unleash the magic and challenge your mind with **Magic Slider**! 🎮
+Unleash the magic and challenge your mind with **Slide Magic**! 🎮
