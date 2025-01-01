@@ -1,0 +1,291 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background: radial-gradient(circle, #1d1f20, #131415);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  justify-content: space-between;
+  text-align: center;
+}
+
+header {
+  text-align: center;
+  padding: 20px;
+  background: linear-gradient(145deg, #4b79a1, #283e51);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
+  z-index: 2;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin: 0;
+  color: #fff;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
+  animation: glow 1.5s ease-in-out infinite alternate;
+}
+
+h2 {
+  font-size: 1.2rem;
+  color: #ddd;
+  margin: 10px 0;
+}
+
+.game-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.grid-section {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  perspective: 1200px;
+  transform-style: preserve-3d;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 80px);
+  grid-gap: 5px;
+  transform: rotateX(15deg);
+  background: #2c2c2c;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+  transform: perspective(800px) rotateX(10deg);
+  transition: transform 0.5s ease;
+}
+
+.grid:hover {
+  transform: perspective(800px) rotateX(0deg);
+}
+
+.tile {
+  width: 80px;
+  height: 80px;
+  background-size: 320px 320px;
+  background-repeat: no-repeat;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  transition: transform 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+  transform-style: preserve-3d;
+}
+
+.tile:hover {
+  transform: translateZ(20px) rotateY(10deg);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+  z-index: 1;
+}
+
+.empty {
+  background: rgba(30, 30, 30, 0.8);
+  cursor: default;
+  box-shadow: none;
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+button {
+  padding: 12px 25px;
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(145deg, #4b79a1, #283e51);
+  color: white;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+button:active {
+  transform: translateY(2px);
+  box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+footer {
+  text-align: center;
+  padding: 10px;
+  background: #131415;
+  color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+  border-top: 1px solid #444;
+}
+
+@keyframes glow {
+  0% {
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.8), 0 0 30px rgba(255, 255, 255, 0.6);
+  }
+  100% {
+    text-shadow: 0 0 50px rgba(255, 255, 255, 1), 0 0 70px rgba(255, 255, 255, 0.7);
+  }
+}
+
+@keyframes tileAnimation {
+  0% {
+    transform: translateZ(0);
+  }
+  50% {
+    transform: translateZ(10px) rotateY(15deg);
+  }
+  100% {
+    transform: translateZ(0);
+  }
+}
+
+@keyframes backgroundShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+#preview-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.preview-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 20px);
+    grid-gap: 2px;
+    background: #2c2c2c;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.preview-tile {
+    width: 20px;
+    height: 20px;
+    background-size: 80px 80px;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+
+/* Responsive Styles for Tablets and Phones */
+/* For Tablets */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    .grid {
+        grid-template-columns: repeat(3, 70px);
+        grid-gap: 4px;
+        padding: 8px;
+    }
+
+    .tile {
+        width: 70px;
+        height: 70px;
+    }
+
+    .controls {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    button {
+        font-size: 16px;
+        padding: 10px 20px;
+    }
+
+    footer {
+        padding: 8px;
+    }
+}
+
+/* For Mobile Phones */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    .grid {
+        grid-template-columns: repeat(3, 60px);
+        grid-gap: 4px;
+        padding: 6px;
+    }
+
+    .tile {
+        width: 60px;
+        height: 60px;
+    }
+
+    .controls {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    button {
+        font-size: 14px;
+        padding: 8px 18px;
+    }
+
+    footer {
+        padding: 6px;
+    }
+}
+
+/* For very small devices (portrait phones) */
+@media (max-width: 375px) {
+    h1 {
+        font-size: 1.2rem;
+    }
+
+    .grid {
+        grid-template-columns: repeat(3, 50px);
+        grid-gap: 3px;
+        padding: 5px;
+    }
+
+    .tile {
+        width: 50px;
+        height: 50px;
+    }
+
+    .controls {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    button {
+        font-size: 12px;
+        padding: 6px 15px;
+    }
+
+    footer {
+        padding: 5px;
+    }
+}
